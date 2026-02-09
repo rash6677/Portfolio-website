@@ -1,16 +1,18 @@
 :root {
-    --bg-color: #0d0d11;
-    --card-bg: rgba(255, 255, 255, 0.05);
-    --primary-color: #6d28d9;
-    /* Violet */
+    --bg-color: #030712;
+    /* Rich Midnight */
+    --card-bg: rgba(30, 41, 59, 0.4);
+    /* Glassy Slate */
+    --primary-color: #8b5cf6;
+    /* Vibrant Violet */
     --secondary-color: #ec4899;
-    /* Pink */
-    --text-main: #f3f4f6;
-    --text-muted: #9ca3af;
+    /* Hot Pink */
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
     --max-width: 1200px;
-    --transition: all 0.3s ease;
+    --transition: cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
 }
 
 * {
@@ -26,8 +28,10 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     background-image:
-        radial-gradient(circle at 10% 20%, rgba(109, 40, 217, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 40%);
+        radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.25) 0%, transparent 45%),
+        radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.25) 0%, transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    background-attachment: fixed;
 }
 
 /* Typography */
@@ -367,5 +371,96 @@ footer {
 
     .about-grid {
         grid-template-columns: 1fr;
+    }
+}
+/* Experience Section */
+.experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.experience-item {
+    padding: 2.5rem;
+    transition: var(--transition);
+}
+
+.experience-item:hover {
+    transform: translateX(10px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.exp-title h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    color: var(--text-main);
+}
+
+.exp-title .company {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.exp-meta {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.exp-date {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.exp-location {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.exp-bullets {
+    list-style: none;
+    padding-left: 0;
+}
+
+.exp-bullets li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+.exp-bullets li::before {
+    content: "?";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Responsive Experience */
+@media (max-width: 768px) {
+    .exp-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .exp-meta {
+        text-align: left;
+    }
+    
+    .experience-item:hover {
+        transform: translateY(-5px);
     }
 }
