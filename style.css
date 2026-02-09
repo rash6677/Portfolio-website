@@ -373,6 +373,7 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
 /* Experience Section */
 .experience-list {
     display: flex;
@@ -428,25 +429,11 @@ footer {
     color: var(--text-muted);
 }
 
-.exp-bullets {
-    list-style: none;
-    padding-left: 0;
-}
-
-.exp-bullets li {
-    position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.8rem;
+.exp-description {
     color: var(--text-muted);
     font-size: 1rem;
-}
-
-.exp-bullets li::before {
-    content: "?";
-    position: absolute;
-    left: 0;
-    color: var(--secondary-color);
-    font-weight: bold;
+    line-height: 1.8;
+    text-align: justify;
 }
 
 /* Responsive Experience */
@@ -455,11 +442,11 @@ footer {
         flex-direction: column;
         gap: 0.5rem;
     }
-    
+
     .exp-meta {
         text-align: left;
     }
-    
+
     .experience-item:hover {
         transform: translateY(-5px);
     }
